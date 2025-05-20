@@ -27,6 +27,14 @@ function setAlarm() {
   const [hours, minutes] = input.split(":");
   alarmTime = `${hours}:${minutes}:00`;
   document.getElementById("message").textContent = `Alarm set for ${alarmTime} 💡`;
+
+    // UNLOCK audio by calling play on interaction
+  alarmSound.play().then(() => {
+    alarmSound.pause(); // Pause right away
+    alarmSound.currentTime = 0; // Reset
+  }).catch((err) => {
+    console.log("Audio not allowed yet, will try again later.");
+  });
 }
 
 const verses = [
