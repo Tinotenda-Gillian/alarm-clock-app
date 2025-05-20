@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Study Girlies Alarm Clock ⏰</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+
+  <div class="clock-container">
+    <h1>⏰ Study Time</h1>
+    <div id="time" class="time">00:00:00</div>
+
+    <div class="alarm-setter">
+      <input type="time" id="alarmTime" />
+      <button onclick="setAlarm()">Set Alarm</button>
+    </div>
+
+    <p id="message">You got this, girl! 💪📖</p>
+    <div id="alarm-controls" style="display: none;">
+      <button onclick="stopAlarm()">🛑 Stop Alarm</button>
+      <button onclick="snoozeAlarm()">😴 Snooze 10 min</button>
+    </div>
+
+    <div class="verse-section">
+      <p class="verse" id="verse">Click below to get your daily verse ✨</p>
+      <button onclick="getVerse()">Get Verse</button>
+    </div>
+
+  </div>
+
+  <div class="theme-toggle">
+  <label class="switch">
+    <input type="checkbox" id="modeToggle" onchange="toggleTheme()" />
+    <span class="slider"></span>
+  </label>
+  <span class="toggle-label">🌞 / 🌙</span>
+  </div>
+
+  <audio id="alarmSound" src="alarm.mp3" preload="auto"></audio>
+  <script src="script.js"></script>
+</body>
+</html>
